@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">Product scan and compare</string>
-
+    <string name="app_name">Skanuj i sprawdź produkt</string>
+    <string name="scanbutton">Skanuj produkt</string>
 </resources>

@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">Skanuj i sprawdź produkt</string>
     <string name="scanbutton">Skanuj produkt</string>
+    <string name="refreshbutton">Odśwież</string>
+    <string name="addbutton">Dodaj produkt do swojej listy</string>
 </resources>

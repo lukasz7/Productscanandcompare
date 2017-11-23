@@ -55,6 +55,13 @@ public class SqliteDatabase extends SQLiteOpenHelper
         db.insertOrThrow("produkty", null, wartosci);
     }
 
+    public boolean usunProdukt (int id)
+    {
+        SQLiteDatabase db = getWritableDatabase();
+        String where = "id_produktu = " + id;
+        return db.delete("produkty", where, null) > 0;
+    }
+
     public Produkt[] pokazProdukty ()
     {
         List<Produkt> produkty = new LinkedList<Produkt>();
@@ -65,14 +72,21 @@ public class SqliteDatabase extends SQLiteOpenHelper
         while(kursor.moveToNext())
         {
             Produkt produkt = new Produkt();
-            produkt.setId(kursor.getLong(0));
+            produkt.setId(kursor.getInt(0));
             produkt.setNazwa(kursor.getString(1));
             produkt.setKod(kursor.getString(2));
             produkty.add(produkt);
         }
 
         Produkt[] lista_produktow = produkty.toArray(new Produkt[produkty.size()]);
+        Produkt[] lista_produktow2 = new Produkt[lista_produktow.length];
+        int j=0;
+        for (int i=lista_produktow.length-1; i >= 0; i--)
+        {
+            lista_produktow2[j] = lista_produktow[i];
+            j++;
+        }
 
-        return lista_produktow;
+        return lista_produktow2;
     }
 }

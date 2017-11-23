@@ -6,14 +6,14 @@ package com.example.lukasz.productscanandcompare;
 
 public class Produkt
 {
-    private Long id;
+    private int id;
     private String nazwa;
     private String kod;
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
-    public void setId(Long id)
+    public void setId(int id)
     {
         this.id = id;
     }
